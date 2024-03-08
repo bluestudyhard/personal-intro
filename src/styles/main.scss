@@ -1,0 +1,19 @@
+html,
+body,
+#app {
+  height: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+ol,ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+html.dark {
+  background: #121212;
+}
