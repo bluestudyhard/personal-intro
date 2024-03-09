@@ -96,7 +96,7 @@ function expandToLeft() {
 
 <style scoped lang="scss">
 @import url(../../styles/intro.scss);
-@import url(../../styles/icon.scss);
+// @import url(../../styles/icon.scss);
 .continue {
   @media (max-width: 768px) {
     top: 8%;
