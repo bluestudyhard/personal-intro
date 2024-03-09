@@ -1,4 +1,4 @@
-.0<template>
+<template>
   <div>
     Not Found
   </div>

@@ -22,6 +22,9 @@ devDependencies:
   '@iconify-json/carbon':
     specifier: ^1.1.28
     version: 1.1.28
+  '@iconify-json/devicon':
+    specifier: ^1.1.35
+    version: 1.1.35
   '@types/node':
     specifier: ^20.11.5
     version: 20.11.5
@@ -31,6 +34,9 @@ devDependencies:
   '@unocss/eslint-plugin':
     specifier: ^0.58.3
     version: 0.58.3(eslint@8.56.0)(typescript@5.3.3)
+  '@unocss/preset-icons':
+    specifier: ^0.58.5
+    version: 0.58.5
   '@unocss/reset':
     specifier: ^0.58.3
     version: 0.58.3
@@ -844,6 +850,12 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
+  /@iconify-json/devicon@1.1.35:
+    resolution: {integrity: sha512-xPq675XakoRjYAqXAC3JPsVSP1Y0AzL2xsJSRYQMw657Yqv7JtI/jX93l0WhjhyjbfOZ/by9wS3UoiKw7LFBfQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: true
@@ -852,11 +864,25 @@ packages:
     resolution: {integrity: sha512-2q2POA+bg1iKFMT3ZAeS8+Lo2PcbTXH2QKdQ9XwxSyCUg+XHA0ZW7mBoW8v0cU/SgitnM2OheEouPw7mRwY+Bg==}
     dependencies:
       '@antfu/install-pkg': 0.1.1
-      '@antfu/utils': 0.7.6
+      '@antfu/utils': 0.7.7
       '@iconify/types': 2.0.0
       debug: 4.3.4
       kolorist: 1.8.0
       local-pkg: 0.4.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@iconify/utils@2.1.22:
+    resolution: {integrity: sha512-6UHVzTVXmvO8uS6xFF+L/QTSpTzA/JZxtgU+KYGFyDYMEObZ1bu/b5l+zNJjHy+0leWjHI+C0pXlzGvv3oXZMA==}
+    dependencies:
+      '@antfu/install-pkg': 0.1.1
+      '@antfu/utils': 0.7.7
+      '@iconify/types': 2.0.0
+      debug: 4.3.4
+      kolorist: 1.8.0
+      local-pkg: 0.5.0
+      mlly: 1.6.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1592,6 +1618,10 @@ packages:
     resolution: {integrity: sha512-9hTxzsrSLh+07ql/lGhE+8ZbE9MTTeZeMx131cPf2jDJUxAZooLE5pBCoK0k77ZJGcribRrwPGkUScBNOK0cYQ==}
     dev: true
 
+  /@unocss/core@0.58.5:
+    resolution: {integrity: sha512-qbPqL+46hf1/UelQOwUwpAuvm6buoss43DPYHOPdfNJ+NTWkSpATQMF0JKT04QE0QRQbHNSHdMe9ariG+IIlCw==}
+    dev: true
+
   /@unocss/eslint-config@0.58.3(eslint@8.56.0)(typescript@5.3.3):
     resolution: {integrity: sha512-q9yLUiVPhTcAiBwu0xwewz4oxz3mdAxOX0uTU5ygbvJQWdLV5gnKPDS74HKuHqT7L/D+IcyM7QAcnYM1SdINBQ==}
     engines: {node: '>=14'}
@@ -1659,6 +1689,16 @@ packages:
     dependencies:
       '@iconify/utils': 2.1.16
       '@unocss/core': 0.58.3
+      ofetch: 1.3.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@unocss/preset-icons@0.58.5:
+    resolution: {integrity: sha512-LDNXavHtWaIvMvBezT9O8yiqHJChVCEfTRO6YFVY0yy+wo5jHiuMh6iKeHVcwbYdn3NqHYmpi7b/hrXPMtODzA==}
+    dependencies:
+      '@iconify/utils': 2.1.22
+      '@unocss/core': 0.58.5
       ofetch: 1.3.3
     transitivePeerDependencies:
       - supports-color
@@ -4709,6 +4749,15 @@ packages:
       ufo: 1.3.1
     dev: true
 
+  /mlly@1.6.1:
+    resolution: {integrity: sha512-vLgaHvaeunuOXHSmEbZ9izxPx3USsk8KCQ8iC+aTlp5sKRSoZvwhHh5L9VbKSaVC6sJDqbyohIS76E2VmHIPAA==}
+    dependencies:
+      acorn: 8.11.3
+      pathe: 1.1.2
+      pkg-types: 1.0.3
+      ufo: 1.4.0
+    dev: true
+
   /mrmime@1.0.1:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
     engines: {node: '>=10'}
@@ -5110,6 +5159,10 @@ packages:
     resolution: {integrity: sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==}
     dev: true
 
+  /pathe@1.1.2:
+    resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
+    dev: true
+
   /pathval@1.1.1:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
     dev: true
@@ -5136,8 +5189,8 @@ packages:
     resolution: {integrity: sha512-nN7pYi0AQqJnoLPC9eHFQ8AcyaixBUOwvqc5TDnIKCMEE6I0y8P7OKA7fPexsXGCGxQDl/cmrLAp26LhcwxZ4A==}
     dependencies:
       jsonc-parser: 3.2.0
-      mlly: 1.4.2
-      pathe: 1.1.1
+      mlly: 1.6.1
+      pathe: 1.1.2
     dev: true
 
   /pluralize@8.0.0:
@@ -5896,6 +5949,10 @@ packages:
     resolution: {integrity: sha512-uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==}
     dev: true
 
+  /ufo@1.4.0:
+    resolution: {integrity: sha512-Hhy+BhRBleFjpJ2vchUNN40qgkh0366FWJGqVLYBHev0vpHTrXSA0ryT+74UiW6KWsldNurQMKGqCm1M2zBciQ==}
+    dev: true
+
   /unconfig@0.3.11:
     resolution: {integrity: sha512-bV/nqePAKv71v3HdVUn6UefbsDKQWRX+bJIkiSm0+twIds6WiD2bJLWWT3i214+J/B4edufZpG2w7Y63Vbwxow==}
     dependencies:
@@ -6036,7 +6093,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      '@antfu/utils': 0.7.6
+      '@antfu/utils': 0.7.7
       unplugin: 1.6.0
       vite: 5.0.12(@types/node@20.11.5)(sass@1.71.1)
     dev: true

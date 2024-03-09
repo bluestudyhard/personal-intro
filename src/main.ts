@@ -11,5 +11,13 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
 
 })
+router.beforeEach((to, from, next) => {
+  // 重定向到/intro
+  if (to.path === '/')
+    next('/intro')
+
+  next()
+},
+)
 app.use(router)
 app.mount('#app')

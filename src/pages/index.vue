@@ -3,46 +3,17 @@ defineOptions({
   name: 'IndexPage',
 })
 // const name = ref('')
-
-// const router = useRouter()
+// 重定向到 /about
 // function go() {
-//   if (name.value)
-//     router.push(`/hi/${encodeURIComponent(name.value)}`)
-// }
+//   if (name.value) {
+//     router.push({ path: '/about', query: { name: name.value } })
+//   }
 </script>
 
 <template>
   <h1 class="text-4xl">
     Hello, Vitesse!
   </h1>
-  <!-- <div>
-    <div i-carbon-campsite inline-block text-4xl />
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
-        Vitesse Lite
-      </a>
-    </p>
-    <p>
-      <em text-sm op75>Opinionated Vite Starter Template</em>
-    </p>
-
-    <div py-4 />
-
-    <TheInput
-      v-model="name"
-      placeholder="What's your name?"
-      autocomplete="false"
-      @keydown.enter="go"
-    />
-
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        Go
-      </button>
-    </div>
-  </div> -->
+  <div i-carbon-accessibility-alt inline-block text-4xl />
+  <div i-uil-blogger-alt inline-block text-4xl />
 </template>

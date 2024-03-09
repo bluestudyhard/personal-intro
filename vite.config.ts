@@ -6,6 +6,7 @@ import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
+import { presetIcons } from 'unocss'
 import VueMacros from 'unplugin-vue-macros/vite'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
@@ -58,7 +59,13 @@ export default defineConfig({
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
-    UnoCSS(),
+    UnoCSS({
+      presets: [
+        presetIcons({
+
+        }),
+      ],
+    }),
   ],
 
   // https://github.com/vitest-dev/vitest

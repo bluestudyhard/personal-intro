@@ -18,12 +18,52 @@ $activebtm: 35%;
 $centerval: 50%;
 
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   $activesize: 4em;
   $idlesize: 2em;
   $activebtm: 30%;
   $centerval: 50%;
 
+  #container.left #left>span {
+    font-size: 4em !important;
+  }
+
+  #container.left #right {
+    width: 13% !important;
+  }
+
+  #container.left #right>span {
+    top: 47.1% !important;
+  }
+
+  #left .content h3:after,
+  #right .content h3:after {
+    font-size: 2em;
+    left: 2.0875em !important;
+    top: -0.9125em !important;
+  }
+
+  #left .content h1:after {
+    left: -0.0875em !important;
+  }
+
+  .intro {
+    flex-direction: column;
+
+    .avatar {
+      display: none;
+    }
+
+    span {
+      font-size: 0.9rem;
+    }
+  }
+
+  #left>ul,
+  #right>ul {
+    bottom: 50% !important;
+    transform: perspective(321px) rotateY(24deg) translateX(0) !important;
+  }
 }
 
 
@@ -42,6 +82,7 @@ body {
   height: 4rem;
   background-color: #efefef76;
   z-index: 100;
+
   ul {
     display: flex;
   }
@@ -56,6 +97,7 @@ body {
   box-sizing: border-box;
   padding: $spacing;
 }
+
 .center {
   // width: 20rem;
   // background: #ffffff52;
@@ -65,6 +107,7 @@ body {
   // z-index: 23;
   // position: absolute;
 }
+
 #container {
   width: 100%;
   height: 100%;
@@ -79,7 +122,7 @@ body {
     #left {
       width: 85%;
 
-      > span {
+      >span {
         bottom: $activebtm;
         font-size: $activesize;
       }
@@ -96,7 +139,7 @@ body {
     #right {
       width: 15%;
 
-      > span {
+      >span {
         top: $activebtm;
         font-size: $idlesize;
       }
@@ -105,12 +148,12 @@ body {
         transform: rotate(22.1deg) translateX(100%);
       }
 
-      > ul {
+      >ul {
         visibility: visible;
         pointer-events: auto;
         /* bottom: 40%; */
 
-        > li {
+        >li {
           opacity: 1;
           transform: translateX(0%);
         }
@@ -122,7 +165,7 @@ body {
     #right {
       width: 85%;
 
-      > span {
+      >span {
         top: $activetop;
         font-size: $activesize;
       }
@@ -131,20 +174,21 @@ body {
         transform: rotate(22.1deg) translateX(-12%);
       }
     }
+
     #left {
       width: 15%;
 
-      > span {
+      >span {
         bottom: $activetop;
         font-size: $idlesize;
       }
 
-      > ul {
+      >ul {
         visibility: visible;
         pointer-events: auto;
         /* bottom: 40%; */
 
-        > li {
+        >li {
           opacity: 1;
           transform: translateX(0%);
         }
@@ -152,6 +196,7 @@ body {
     }
   }
 }
+
 // 左边蓝色区域
 #left,
 #right {
@@ -166,7 +211,7 @@ body {
   z-index: 2;
   position: relative;
 
-  > span {
+  >span {
     font-size: 7em;
     font-family: Monoton, Impact, sans-serif;
     display: inline-block;
@@ -192,8 +237,9 @@ body {
     transform: rotate(22.1deg) translateX(-200%);
     text-align: left;
     transition: transform 0.3s ease-in-out;
+
     .intro {
-      > * span {
+      >* span {
         margin: 0.2rem;
         position: relative;
         width: 100%;
@@ -220,10 +266,12 @@ body {
         //     /*3秒后停止*/ flashing 1.2s ease-in-out infinite forwards;
         // }
       }
+
       display: flex;
       // width: 100%;
       justify-content: space-around;
       align-items: center;
+
       .intro-text {
         display: flex;
         flex-direction: column;
@@ -254,6 +302,7 @@ body {
       letter-spacing: 0.1em;
       padding: 0.2em 0 0.25em 0;
     }
+
     .about {
       font-size: 1.5rem;
       font-weight: 700;
@@ -261,11 +310,13 @@ body {
       transition: all 0.4s ease-in-out;
       padding: 2rem 0;
       line-height: 2;
+
       &:hover {
         transform: scale(1.1);
         transition: all 0.4s ease-in-out;
       }
     }
+
     h3,
     h3:after {
       font: 600 1.5em/1 "Raleway", sans-serif;
@@ -281,6 +332,7 @@ body {
       letter-spacing: 0.1em;
       padding: 0.2em 0 0.25em 0;
     }
+
     h3:after {
       content: attr(data-shadow-text);
       color: $tycho1a;
@@ -292,6 +344,7 @@ body {
       z-index: -1;
       transform: rotate(-2.1deg);
     }
+
     h1 {
       font-size: 4em;
       z-index: 100;
@@ -322,7 +375,7 @@ body {
     }
   }
 
-  > ul {
+  >ul {
     position: absolute;
     z-index: 1;
     bottom: 40%;
@@ -342,6 +395,7 @@ body {
       &.second {
         transition-delay: 0.1s;
       }
+
       &.third {
         transition-delay: 0.2s;
       }
@@ -367,6 +421,7 @@ body {
     }
   }
 }
+
 // 未点击时的
 #left {
   float: left;
@@ -378,17 +433,17 @@ body {
 
   &,
   // >*表示所有子元素
-  > * {
+  >* {
     transform-origin: 100% 50% !important;
   }
 
-  > span {
+  >span {
     right: 0;
     bottom: 53%;
     animation: initAnimationLeft 2s ease-in-out;
   }
 
-  > ul {
+  >ul {
     right: -1px;
     transform: perspective(300px) rotateY(41deg) translateX(0);
 
@@ -413,14 +468,12 @@ body {
   }
 
   .rainbow {
-    background-image: linear-gradient(
-      #d9b036 25%,
-      #d96b2b 25%,
-      #d96b2b 50%,
-      #731702 50%,
-      #731702 75%,
-      #400707 75%
-    );
+    background-image: linear-gradient(#d9b036 25%,
+        #d96b2b 25%,
+        #d96b2b 50%,
+        #731702 50%,
+        #731702 75%,
+        #400707 75%);
     position: absolute;
     width: 100%;
     height: 5%;
@@ -450,17 +503,17 @@ body {
   margin-right: -20%;
 
   &,
-  > * {
+  >* {
     transform-origin: 0% 50%;
   }
 
-  > span {
+  >span {
     text-indent: -0.05em;
     top: 47.1%;
     animation: initAnimationRight 2s ease-in-out;
   }
 
-  > ul li {
+  >ul li {
     margin-left: -2px;
     border-left: solid 1px #366;
   }
@@ -487,18 +540,22 @@ body {
     }
   }
 }
+
 @keyframes initAnimationLeft {
   0% {
     bottom: 100%;
   }
+
   100% {
     bottom: 53%;
   }
 }
+
 @keyframes initAnimationRight {
   0% {
     top: 100%;
   }
+
   100% {
     top: 47.1%;
   }
@@ -515,4 +572,3 @@ body {
     opacity: 0;
   }
 }
-

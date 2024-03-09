@@ -29,14 +29,12 @@ function expandToLeft() {
 <template>
   <div class="wrapper nopre">
     <div id="container" ref="containerRef" :class="containerClass">
-      <Continue class="absolute left-0 top-45% z-3 transform-none" :is-rotate="showLeft" @click="expandToLeft" />
+      <Continue
+        class="continue absolute left-0 top-45% z-3 h-10 w-10 transform-none" :is-rotate="showLeft"
+        @click="expandToLeft"
+      />
       <div id="left" href="#">
         <span>M</span>
-
-        <!--
-    (messing around with rainbow animation effect + colors)
-    <div class="rainbow"></div>
--->
 
         <div class="content">
           <h1 data-shadow-text="Personal intro">
@@ -45,7 +43,8 @@ function expandToLeft() {
           <div class="intro">
             <span class="intro-text">
               <span>
-                哈啰！这里是melingkk,codingName: bluestudyhard
+                哈啰！这里是melingkk
+                <p color="black"> codingName: bluestudyhard</p>
               </span>
               <span>我是一名在校大学生
                 热衷于前端开发(cvdafa)-ui设计-制作动效
@@ -54,20 +53,13 @@ function expandToLeft() {
                 喜欢和了解各种领域的知识~</span>
             </span>
             <div class="avatar">
-              <img src="/avatar.png">
+              <a href="https://blog.melingblue.top/" target="_blank"> <img rounded-2 src="/avatar.png"></a>
             </div>
           </div>
           <h3 data-shadow-text="Me -> To" class="about">
             Know more about
           </h3>
         </div>
-
-        <!--
-        <ul>
-            <li class="first"><a href="#">CV</a></li>
-            <li class="second"><a href="#">Work</a></li>
-            <li class="third"><a href="#">Contact</a></li>
-        </ul> -->
       </div>
 
       <div id="right" href="#">
@@ -82,12 +74,14 @@ function expandToLeft() {
 
         <ul>
           <li class="first">
-            <a href="https://github.com/bluestudyhard" target="_blank">github</a>
+            <a href="https://github.com/bluestudyhard" target="_blank">github
+            </a>
           </li>
           <li class="second">
             <a href="https://github.com/bluestudyhard?tab=repositories" target="_blank">My
               Project</a>
           </li>
+
           <li class="third">
             <a href="https://blog.melingblue.top/" target="_blank">My Blog</a>
           </li>
@@ -102,4 +96,20 @@ function expandToLeft() {
 
 <style scoped lang="scss">
 @import url(../../styles/intro.scss);
+@import url(../../styles/icon.scss);
+.continue {
+  @media (max-width: 768px) {
+    top: 8%;
+  }
+}
+.avatar {
+  img {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px 0 #efedceaf;
+  }
+  :hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+}
 </style>
